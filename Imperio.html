@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>GENERADOR</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.1.1.js" type="text/javascript"></script>
+        <script src="js/Imperio.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <br>
+        <div id="container" style="width: 200px; display: inline" class="col-lg-1">
+
+            <div><button type="button" class="btn btn-block btn-danger" onclick="showcomands()">Comandantes</button></div>
+            <div><button type="button" class="btn btn-block btn-danger" onclick="showheroes()">Héroes</button></div>
+            <div><button type="button" class="btn btn-block btn-danger" onclick="showbasicas()">Básicas</button></div>
+            <div><button type="button" class="btn btn-block btn-danger" onclick="showespeciales()">Especiales</button></div>
+            <div><button type="button" class="btn btn-block btn-danger" onclick="showsingulares()">Singulares</button></div>
+
+
+        </div>
+        <div id="units">
+            <div id="unitsComand" style="display: none">
+                <table><tr>
+                        <td><img onclick='addGeneral()' class='borde' src='img warhgen/Imperio/General.png'/></td>
+                        <td><img onclick='addHechiMayor()' class='borde' src='img warhgen/Imperio/hechimayor.png'/></td>
+                        <td><img onclick='addArchilector()' class='borde' src='img warhgen/Imperio/archilector.png'/></td>
+                        <td><img onclick='addGranMaestre()' class='borde' src='img warhgen/Imperio/granmaestre.png'/></td>
+                    </tr><tr align='center'>
+                        <td>General<br>del Imperio</td><td>Hechicero de<br>batalla mayor</td><td>Archilector</td><td>Gran Maestre</td></tr></table>
+            </div>
+            <div id="unitsHero" style="display: none">
+                <table><tr>
+                        <td><img onclick='addCapitan()' class='borde' src='img warhgen/Imperio/capitan.png'/></td>
+                        <td><img onclick='addHechi()' class='borde' src='img warhgen/Imperio/hechi.png'/></td>
+                        <td><img onclick='addSacer()' class='borde' src='img warhgen/Imperio/sacer.png'/></td>
+                        <td><img onclick='addIngeniero()' class='borde' src='img warhgen/Imperio/ingeniero.png'/></td>
+                        <td><img onclick='addCazaBrujas()' class='borde' src='img warhgen/Imperio/cazabrujas.png'/><td>
+                    </tr><tr align='center'>
+                        <td>Capitán<br>del Imperio</td><td>Hechicero de<br>batalla</td><td>Sacerdote guerrero</td><td>Maestro ingeniero</td><td>Cazador de brujas</td></tr></table>
+            </div>
+            <div id="unitsBasic" style="display: none">
+                <table><tr>
+                        <td><img onclick='addAlabarderos()' class='borde' src='img warhgen/Imperio/alabarderos.png'/></td>
+                        <td><img onclick='addLanceros()' class='borde' src='img warhgen/Imperio/lanceros.png'/></td>
+                        <td><img onclick='addEspaderos()' class='borde' src='img warhgen/Imperio/espaderos.png'/></td>
+                        <td><img onclick='addArqueros()' class='borde' src='img warhgen/Imperio/arqueros.png'/></td>
+                        <td><img onclick='addMilicia()' class='borde' src='img warhgen/Imperio/milicia.png'/></td>
+                        <td><img onclick='showbasicas2()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td>Alabarderos</td><td>Lanceros</td><td>Espaderos</td><td>Arqueros</td><td>Milicia de las<br>compañías libres</td></tr></table>
+            </div>
+            <div id="unitsBasic2" style="display: none">
+                <table><tr>
+                        <td><img onclick='showbasicas()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addBallestas()' class='borde' src='img warhgen/Imperio/ballesteros.png'/></td>
+                        <td><img onclick='addArcabuceros()' class='borde' src='img warhgen/Imperio/arcabuceros.png'/></td>
+                        <td><img onclick='addOrdenCab()' class='borde' src='img warhgen/Imperio/caballeria.png'/></td>
+                    </tr><tr align='center'>
+                        <td></td><td>Ballesteros</td><td>Arcabuceros</td><td>Órdenes de<br>caballería</td></tr></table>
+            </div>
+            <div id="unitsEsp" style="display: none">
+                <table><tr>
+                        <td><img onclick='addGrandesEspaderos()' class='borde' src='img warhgen/Imperio/grandesespaderos.png'/></td>
+                        <td><img onclick='addPollos()' class='borde' src='img warhgen/Imperio/pollos.png'/></td>
+                        <td><img onclick='addReiksguard()' class='borde' src='img warhgen/Imperio/reiksguard.png'/></td>
+                        <td><img onclick='addCazadores()' class='borde' src='img warhgen/Imperio/cazadores.png'/></td>
+                        <td><img onclick='addHerreruelos()' class='borde' src='img warhgen/Imperio/herreruelos.png'/></td>
+                        <td><img onclick='showespeciales2()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td>Grandes Espaderos</td><td>Caballeros en<br>semigrifo</td><td>Caballeros de<br>la Reiksguard</td><td>Cazadores</td><td>Herreruelos</td></tr></table>
+            </div>
+            <div id="unitsEsp2" style="display: none">
+                <table><tr>
+                        <td><img onclick='showespeciales()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addBatidores()' class='borde' src='img warhgen/Imperio/batidores.png'/></td>
+                        <td><img onclick='addGranCañon()' class='borde' src='img warhgen/Imperio/cañon.png'/></td>
+                        <td><img onclick='addMortero()' class='borde' src='img warhgen/Imperio/mortero.png'/></td>
+                        <td><img onclick='addFlagelantes()' class='borde' src='img warhgen/Imperio/flagelantes.png'/></td>
+                    </tr><tr align='center'>
+                        <td></td><td>Batidores</td><td>Gran<br>cañón</td><td>Mortero</td><td>Flagelantes</td></tr></table>
+            </div>
+            <div id="unitsSing" style="display: none">
+                <table><tr>
+                        <td><img onclick='addSalvas()' class='borde' src='img warhgen/Imperio/salvas.png'/></td>
+                        <td><img onclick='addBateria()' class='borde' src='img warhgen/Imperio/bateria.png'/></td>
+                        <td><img onclick='addTanque()' class='borde' src='img warhgen/Imperio/tanque.png'/></td>
+                        <td><img onclick='addHuracanum()' class='borde' src='img warhgen/Imperio/huracanum.png'/></td>
+                        <td><img onclick='addLuminarca()' class='borde' src='img warhgen/Imperio/luminarca.png'/></td>
+                        <td><img onclick='showMercs1()' class='borde' src='img warhgen/0Plus.png'/></td>
+                    </tr><tr align='center'>
+                        <td>Cañón de salvas</td><td>Batería de<br>cohetes</td><td>Tanque de vapor</td><td>Huracanum<br>celestial</td><td>Luminarca de Hysh</td><td><b>MERCENARIOS</b></td></tr></table>
+            </div>
+            <div id="unitsMerc1" style="display: none">
+                <table><tr>
+                        <td colspan="2"><img onclick='addPiqueros()' class='borde' src='img warhgen/mercs/Piqueros.png'/></td>
+                        <td><img onclick='addBallesteros()' class='borde' src='img warhgen/mercs/Ballesteros.png'/></td>
+                        <td><img onclick='addDuelistas()' class='borde' src='img warhgen/mercs/Duelistas.png'/></td>
+                        <td><img onclick='addCaballeriaPes()' class='borde' src='img warhgen/mercs/CaballeriaPes.png'/></td>
+                        <td><img onclick='addCaballeriaLig()' class='borde' src='img warhgen/mercs/CaballeriaLig.png'/></td>
+                        <td><img onclick='showMercs2()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>1 - 8</b></td><td align="left"> Piqueros</td><td>Ballesteros</td><td>Duelistas</td><td>Caballeria Pesada</td><td>Caballeria ligera</td><td></td></tr></table>
+            </div>
+            <div id="unitsMerc2" style="display: none">
+                <table><tr>
+                        <td><img onclick='showMercs1()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addOgros()' class='borde' src='img warhgen/mercs/Ogros.png'/></td>
+                        <td><img onclick='addEnanos()' class='borde' src='img warhgen/mercs/Enanos.png'/></td>
+                        <td><img onclick='addNordicos()' class='borde' src='img warhgen/mercs/Nordicos.png'/></td>
+                        <td><img onclick='addHalflings()' class='borde' src='img warhgen/mercs/Halflings.png'/></td>
+                        <td><img onclick='showMercs3()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>2 - 8</b></td><td>Ogros</td><td>Enanos</td><td>Incursores nórdicos</td><td>Halflings</td></tr></table>
+            </div>
+            <div id="unitsMerc3" style="display: none">
+                <table><tr>
+                        <td><img onclick='showMercs2()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addOlla()' class='borde' src='img warhgen/mercs/Olla.png'/></td>
+                        <td><img onclick='addCañon()' class='borde' src='img warhgen/mercs/Cañon.png'/></td>
+                        <td><img onclick='showRR1()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>3 - 8</b></td><td>Olla caliente Halfling</td><td>Cañón</td><td><b>REGIMIENTOS<br>DE RENOMBRE</b></td></tr></table>
+            </div>
+            <div id="unitsRR1" style="display: none">
+                <table><tr>
+                        <td><img onclick='showMercs3()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addPirazzo()' class='borde' src='img warhgen/mercs/Pirazzo.jpg'/></td>
+                        <td><img onclick='addRico()' class='borde' src='img warhgen/mercs/Rico.jpg'/></td>
+                        <td><img onclick='addLeopold()' class='borde' src='img warhgen/mercs/Leopold.jpg'/></td>
+                        <td><img onclick='addAlcatani()' class='borde' src='img warhgen/mercs/Alcatani.jpg'/></td>
+                        <td><img onclick='showRR2()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>4 - 8</b></td><td>Legion perdida<br>de Pirazzo</td><td>Guardia republicana<br>de Rico</td><td>Compañía del leopardo<br>de Leopold</td><td>La compañía Alcatani</td></tr></table>
+            </div>
+            <div id="unitsRR2" style="display: none">
+                <table><tr>
+                        <td><img onclick='showRR1()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addVespero()' class='borde' src='img warhgen/mercs/Vespero.png'/></td>
+                        <td><img onclick='addMiragliano()' class='borde' src='img warhgen/mercs/Miragliano.png'/></td>
+                        <td><img onclick='addAlmuktar()' class='borde' src='img warhgen/mercs/Almuktar.png'/></td>
+                        <td><img onclick='addBraganza()' class='borde' src='img warhgen/mercs/Braganza.png'/></td>
+                        <td><img onclick='showRR3()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>5 - 8</b></td><td>Asesinos de Véspero</td><td>Tiradores de<br>Miragliano</td><td>Perros del desierto<br>de Al Muktar</td><td>Ballesteros de asedio<br>de Braganza</td></tr></table>
+            </div>
+            <div id="unitsRR3" style="display: none">
+                <table><tr>
+                        <td><img onclick='showRR2()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addVoland()' class='borde' src='img warhgen/mercs/Voland.png'/></td>
+                        <td><img onclick='addUrslo()' class='borde' src='img warhgen/mercs/Urslo.png'/></td>
+                        <td><img onclick='addGolgfag()' class='borde' src='img warhgen/mercs/Golgfag.png'/></td>
+                        <td><img onclick='addLumpin()' class='borde' src='img warhgen/mercs/Lumpin.png'/></td>
+                        <td><img onclick='showRR4()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>6 - 8</b></td><td>Cazadores de Voland</td><td>Beorg Bearstruck y los<br>hombres oso de Urslo</td><td>Los mercenarios<br>de Golgfag</td><td>Gallos de pelea<br>de Lumpin Croop</td></tr></table>
+            </div>
+            <div id="unitsRR4" style="display: none">
+                <table><tr>
+                        <td><img onclick='showRR3()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addOglah()' class='borde' src='img warhgen/mercs/Oglah.png'/></td>
+                        <td><img onclick='addDrong()' class='borde' src='img warhgen/mercs/Drong.png'/></td>
+                        <td><img onclick='addBronzino()' class='borde' src='img warhgen/mercs/Bronzino.png'/></td>
+                        <td><img onclick='addCatrazza()' class='borde' src='img warhgen/mercs/Catrazza.png'/></td>
+                        <td><img onclick='showRR5()' class='borde' src='img warhgen/0RightNav.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>7 - 8</b></td><td>Jinetes de lobo<br>de Oglah Khan</td><td>Matadores pirata<br>de Drong el largo</td><td>Artillería a caballo<br>de Bronzino</td><td>Los hombres pájaro<br>de Catrazza</td></tr></table>
+            </div>
+            <div id="unitsRR5" style="display: none">
+                <table><tr>
+                        <td><img onclick='showRR4()' class='borde' src='img warhgen/0LeftNav.png'/></td>
+                        <td><img onclick='addAlbion()' class='borde' src='img warhgen/mercs/Albion.png'/></td>
+                        <td><img onclick='addTichi()' class='borde' src='img warhgen/mercs/Tichi.png'/></td>
+                        <td><img onclick='addRuglud()' class='borde' src='img warhgen/mercs/Ruglud.png'/></td>
+                        <td><img onclick='addMaldita()' class='borde' src='img warhgen/mercs/Maldita.png'/></td>
+                        <td><img onclick='addMengil()' class='borde' src='img warhgen/mercs/Mengil.png'/></td>
+                    </tr><tr align='center'>
+                        <td align="left"><b>8 - 8</b></td><td>Gigantes de Albión</td><td>Incursores Tichi Huichi</td><td>Orcos akorazados<br>de Ruglud</td><td>La compañía maldita</td><td>Los desolladores<br>de Mengil</td></tr></table>
+            </div>
+        </div>
+        <hr>
+        <div class="col-lg-8">
+            <div class="col-lg-3"><h4>Puntos:  
+                    <div id="punts" style="display: inline">
+                        0
+                    </div></h4>
+            </div>
+            <div class="col-lg-9">
+                <h5>Total: <input type="number" id="pTotal" step="100" onchange="checkPercent()"></h5>
+            </div>
+        </div>
+
+
+        <br><br>
+        <div id="list" class="col-lg-8" align="center">
+            <div class="col-lg-2">
+                <div id="pCommand"><h4>0</h4></div>
+                <h3 style="font-family: 'Matura MT Script Capitals'">Comandantes</h3>
+                <div id="listComand"></div>
+                <div style="color: white">.</div>
+            </div>
+            <div class="col-lg-2">
+                <div id="pHero"><h4>0</h4></div>
+                <h3 style="font-family: 'Matura MT Script Capitals'">Heroes</h3>
+                <div id="listHero"></div>
+                <div style="color: white">.</div>
+            </div>
+            <div class="col-lg-2">
+                <div id="pBasic"><h4>0</h4></div>
+                <h3 style="font-family: 'Matura MT Script Capitals'">Básicas</h3>
+                <div id="listBasic"></div>
+                <div style="color: white">.</div>
+            </div>
+            <div class="col-lg-2">
+                <div id="pEsp"><h4>0</h4></div>
+                <h3 style="font-family: 'Matura MT Script Capitals'">Especiales</h3>
+                <div id="listEsp"></div>
+                <div style="color: white">.</div>
+            </div>
+            <div class="col-lg-2">
+                <div id="pSing"><h4>0</h4></div>
+                <h3 style="font-family: 'Matura MT Script Capitals'">Singulares</h3>
+                <div id="listSing"></div>
+                <div style="color: white">.</div>
+            </div>
+        </div>
+
+        <div align="right"><button type="button" class="btn btn-info" id="butdown" onclick="preparedownload()" style="margin-right: 50px" title="Descarga la lista en formato texto">Descarga</button></div>
+
+        <h4><div style="display: inline">Info de tropa: </div><div id="nombre" title="Clic para cambiar el nombre" style="display: inline; color: Grey"></div><div id="nombre2" style="display: inline"></div><div id="nombre3" style="display: inline"></div></h4>
+        <div class="col-lg-4">
+            <div id="detail" >
+                <div id="perfil"></div>
+                <div id="detailPuntos"></div>
+                <div id="puntosInd"></div>
+                <div id="cantidad"></div> 
+                <div id="reglas"></div>
+                <div id="arma"></div>
+                <div id="arma2"></div>
+                <div id="armadura"></div>
+                <div id="escudo"></div>
+                <div id="barda"></div>
+                <div id="emboscada"></div>
+                <div id="montura"></div>
+                <div id="level"></div>
+                <div id="saber"></div>
+                <div id="campeon"></div>
+                <div id="estandarte"></div>
+                <div id="musico"></div>
+                <div id="armaMagic"></div>
+                <div id="armaduraMagic"></div>
+                <div id="arcano"></div>
+                <div id="talisman"></div>
+                <div id="hechizado"></div>
+                <div id="portadebatalla"></div>
+                <div id="estandarteMag"></div>
+                <div id="regaloCampeon"></div>
+                <div id="objetoCampeon"></div>
+                <div id='gran'></div>
+                <div id="mejora1"></div>
+                <div id="mejora2"></div>
+                <div id='mejora3'></div>
+                <div id="mejora4"></div>
+                <div id="mejora5"></div>
+                <div id='mejora6'></div>
+                <div id="regalos"></div>
+                <div id="rCorona"></div>
+                <div id="rPielN"></div>
+                <div id="rDiablo"></div>
+                <div id="rZancada"></div>
+                <div id="rPellejo"></div>
+                <div id="rPielH"></div>
+                <div id="rColmillos"></div>
+                <div id="rRuna"></div>
+                <div id="rSentidos"></div>
+                <div id="rPielS"></div>
+                <div id="gnob"></div>
+
+            </div>
+            <div style="color: white">Patata verda</div>
+        </div>
+        <!--<audio controls id="audio" style="display: none">
+            <source src="img warhgen/gnoblar/yehehei.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>-->
+    </body>
+</html>

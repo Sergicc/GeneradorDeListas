@@ -1,0 +1,51 @@
+.borde{
+    border: 1px solid black;
+    width: 153px;
+    height: 149px;
+}
+.comand{
+    border: 3px solid darkred; width: 140px; height: 139px;
+}
+.hero{
+    border: 3px solid brown; width: 140px; height: 139px;
+}
+.basic{
+    border: 3px solid lightcoral; width: 140px; height: 139px;
+}
+.esp{
+    border: 3px solid red; width: 140px; height: 139px;
+}
+.sing{
+    border: 3px solid firebrick; width: 140px; height: 139px;
+}
+.merc{
+    border: 3px solid blue; width: 140px; height: 139px;
+}
+.ren{
+    border: 3px solid darkblue; width: 140px; height: 139px;
+}
+.perfil{
+    border-bottom: 1px solid black;
+}
+.td{
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+}
+.td-left{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.big-chB > [type="checkbox"]{
+    transform: scale(2);
+    width: 40px;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-abr-2020, 20:33:34
+    Author     : Sergi
+*/
+
